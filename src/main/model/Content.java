@@ -1,5 +1,6 @@
 package model;
 
+// represents a content with name, year (above 1900), genre, language, ratings (out of 5), and streaming site
 public class Content {
     private String name;
     private int year;

@@ -3,6 +3,7 @@ package model;
 import java.util.ArrayList;
 import java.util.List;
 
+// represents a list of Contents
 public class ListOfContent {
     private List<Content> loC;
     private int position;
@@ -151,10 +152,6 @@ public class ListOfContent {
     //MODIFIES: this
     //EFFECTS: removes a content from the list of content
     public void removeContent(String name) {
-        for (Content next : loC) {
-            if (name.equals(next.getName())) {
-                loC.remove(next);
-            }
-        }
+        loC.removeIf(h -> h.getName().equals(name));
     }
 }

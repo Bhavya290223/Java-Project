@@ -31,4 +31,19 @@ public class ContentTest {
         assertEquals("Disney",h4.getLocation());
 
     }
+
+    @Test
+    public void setRatingsTest() {
+
+        assertEquals(5, h.getRatings());
+        h.setRating(3);
+        assertEquals(3, h.getRatings());
+        h.setRating(3);
+        assertEquals(3, h.getRatings());
+        h2.setRating(5);
+        h2.setRating(1);
+        assertEquals(1, h2.getRatings());
+
+
+    }
 }

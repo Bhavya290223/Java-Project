@@ -44,6 +44,25 @@ class ListOfContentTest {
     }
 
     @Test
+    public void getListTest() {
+
+        assertEquals(0,LC3.length());
+
+        LC3.addToList(c1);
+        LC3.addToList(c2);
+
+        assertEquals(2,LC3.length());
+        assertTrue(LC3.getList().contains(c1));
+        assertTrue(LC3.getList().contains(c2));
+
+        LC3.removeContent(c1.getName());
+
+        assertEquals(1 ,LC3.getList().size());
+        assertFalse(LC3.getList().contains(c1));
+        assertTrue(LC3.getList().contains(c2));
+    }
+
+    @Test
     public void getNamesTest() {
         List<String> m = new ArrayList<>();
         m.add("abc");
@@ -175,6 +194,55 @@ class ListOfContentTest {
         assertEquals(c2 , LC1.getNextContent());
     }
 
+    @Test
+    public void containsTest() {
+
+        assertFalse(LC3.contains(c1.getName()));
+        assertFalse(LC3.contains(c2.getName()));
+
+        LC3.addToList(c1);
+
+        assertTrue(LC3.contains(c1.getName()));
+        assertFalse(LC3.contains(c2.getName()));
+
+        LC3.addToList(c2);
+
+        assertTrue(LC3.contains(c1.getName()));
+        assertTrue(LC3.contains(c2.getName()));
+
+        LC3.removeContent("abc");
+
+        assertFalse(LC3.contains(c1.getName()));
+        assertTrue(LC3.contains(c2.getName()));
+    }
+
+    @Test
+    public void addToListAlreadyThereTest() {
+
+        assertEquals(0,LC3.getList().size());
+
+        LC3.addToList(c1);
+        LC3.addToList(c2);
+
+        assertEquals(2,LC3.getList().size());
+
+        LC3.addToList(c1);
+        LC3.addToList(c2);
+
+        assertEquals(2,LC3.getList().size());
+    }
+
+    @Test
+    public void addToListNotThereTest() {
+
+        assertEquals(0,LC3.getList().size());
+
+        LC3.addToList(c1);
+        LC3.addToList(c2);
+
+        assertEquals(2,LC3.getList().size());
+    }
+
 
     @Test
     public void lengthTest() {
@@ -189,5 +257,28 @@ class ListOfContentTest {
 
         assertFalse(LC1.isEmpty());
         assertTrue(LC3.isEmpty());
+    }
+
+    @Test
+    public void removeContentTest() {
+
+        assertEquals(0,LC3.getList().size());
+
+        LC3.addToList(c1);
+        LC3.addToList(c2);
+
+        assertEquals(2,LC3.getList().size());
+
+        LC3.removeContent(c1.getName());
+        assertEquals(1,LC3.getList().size());
+
+        LC3.removeContent(c1.getName());
+        assertEquals(1,LC3.getList().size());
+
+        LC3.removeContent(c2.getName());
+        assertEquals(0,LC3.getList().size());
+
+        LC3.removeContent(c2.getName());
+        assertEquals(0,LC3.getList().size());
     }
 }
