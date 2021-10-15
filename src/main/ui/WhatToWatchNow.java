@@ -5,6 +5,7 @@ import model.ListOfContent;
 
 import java.util.Scanner;
 
+// What to Watch Now application
 public class WhatToWatchNow {
     private Content c1;
     private ListOfContent loc = new ListOfContent();
@@ -15,6 +16,8 @@ public class WhatToWatchNow {
         runApp();
     }
 
+    // MODIFIES : this
+    // EFFECTS :takes user inputs and process them
     private void runApp() {
         boolean keepGoing = true;
         String command = "";
@@ -116,6 +119,7 @@ public class WhatToWatchNow {
         loc.addToList(c);
     }
 
+    //EFFECTS: returns the list of contents of a specific year as per the user entry
     private void giveContentOnYear() {
         input = new Scanner(System.in);
         int y1;
@@ -125,6 +129,7 @@ public class WhatToWatchNow {
         System.out.println(loc.contentbyYear(y1));
     }
 
+    //EFFECTS: returns the list of contents of a specific genre as per the user entry
     private void giveContentOnGenre() {
         input = new Scanner(System.in);
         String g1;
@@ -134,6 +139,7 @@ public class WhatToWatchNow {
         System.out.println(loc.contentbyGenre(g1));
     }
 
+    //EFFECTS: returns the list of contents of a specific language as per the user entry
     private void giveContentOnLanguage() {
         input = new Scanner(System.in);
         String l1;
@@ -143,6 +149,7 @@ public class WhatToWatchNow {
         System.out.println(loc.contentbyLang(l1));
     }
 
+    //EFFECTS: returns the list of contents of a specific rating as per the user entry
     private void giveContentOnRatings() {
         input = new Scanner(System.in);
         int r1;
@@ -152,6 +159,7 @@ public class WhatToWatchNow {
         System.out.println(loc.contentbyRatings(r1));
     }
 
+    //EFFECTS: returns the list of contents of a specific streaming site as per the user entry
     private void giveContentOnLocation() {
         input = new Scanner(System.in);
         String lo1;
@@ -161,6 +169,8 @@ public class WhatToWatchNow {
         System.out.println(loc.contentbySite(lo1));
     }
 
+    //MODIFIES: this
+    //EFFECTS: removes the Content with the same name as per user entry, from the list of Contents
     private void removeContent() {
         input = new Scanner(System.in);
         String s1;
