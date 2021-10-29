@@ -2,7 +2,8 @@ package persistence;
 
 import model.Content;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 
 public class JsonTest {
     protected void checkContent(String name, int year, String genre, String lang, int ratings,
