@@ -26,3 +26,5 @@ As a user, I want to be able to:
 - Add ratings 
 - Delete a content from my playlist  
 - Add a content
+- I want to be able to save the list I created. 
+- I want to be able to load the list I have saved.

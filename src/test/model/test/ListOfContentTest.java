@@ -26,9 +26,9 @@ class ListOfContentTest {
 
     @BeforeEach
     public void setup() {
-        LC1 = new ListOfContent();
-        LC2 = new ListOfContent();
-        LC3 = new ListOfContent();
+        LC1 = new ListOfContent("a");
+        LC2 = new ListOfContent("b");
+        LC3 = new ListOfContent("c");
 
         c1 = new Content("abc", 1995, "Comedy",
                 "eng",5, "Netflix");

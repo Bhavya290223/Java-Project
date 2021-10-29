@@ -1,16 +1,26 @@
 package model;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
+import persistence.Writable;
+
 import java.util.ArrayList;
 import java.util.List;
 
 // represents a list of Contents
-public class ListOfContent {
+public class ListOfContent implements Writable {
+    private String name;
     private List<Content> loC;
     private int position;
 
     //EFFECTS - creates a new List of Content
-    public ListOfContent() {
+    public ListOfContent(String name) {
+        this.name = name;
         loC = new ArrayList<>();
+    }
+
+    public String getName() {
+        return name;
     }
 
     //EFFECTS: returns the List of Content
@@ -153,5 +163,23 @@ public class ListOfContent {
     //EFFECTS: removes a content from the list of content
     public void removeContent(String name) {
         loC.removeIf(h -> h.getName().equals(name));
+    }
+
+    @Override
+    public JSONObject toJson() {
+        JSONObject json = new JSONObject();
+        json.put("name", name);
+        json.put("loc", loCToJson());
+        return json;
+    }
+
+    //EFFECTS: return contents in this list of restaurants as a JSON array
+    private JSONArray loCToJson() {
+        JSONArray jsonArray = new JSONArray();
+
+        for (Content c : loC) {
+            jsonArray.put(c.toJson());
+        }
+        return jsonArray;
     }
 }

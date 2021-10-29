@@ -1,7 +1,10 @@
 package model;
 
+import org.json.JSONObject;
+import persistence.Writable;
+
 // represents a content with name, year (above 1900), genre, language, ratings (out of 5), and streaming site
-public class Content {
+public class Content implements Writable {
     private String name;
     private int year;
     private String genre;
@@ -53,5 +56,17 @@ public class Content {
 
     public void setRating(int newRating) {
         ratings = newRating;
+    }
+
+    @Override
+    public JSONObject toJson() {
+        JSONObject json = new JSONObject();
+        json.put("name", name);
+        json.put("year", year);
+        json.put("genre", genre);
+        json.put("language", language);
+        json.put("ratings", ratings);
+        json.put("site", location);
+        return json;
     }
 }

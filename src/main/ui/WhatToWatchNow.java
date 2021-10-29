@@ -2,17 +2,29 @@ package ui;
 
 import model.Content;
 import model.ListOfContent;
+import persistence.JsonReader;
+import persistence.JsonWriter;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.Scanner;
+
+// This class references code from the TellerApp repository
+// Link: https://github.students.cs.ubc.ca/CPSC210/TellerApp.git
 
 // What to Watch Now application
 public class WhatToWatchNow {
+    private static final String JSON_STORE = "./data/contentList.json";
     private Content c1;
-    private ListOfContent loc = new ListOfContent();
+    private ListOfContent loc = new ListOfContent("MyList");
     private Scanner input;
+    private JsonWriter jsonWriter;
+    private JsonReader jsonReader;
 
     // EFFECTS: Runs the What To Watch Now application
-    public WhatToWatchNow() {
+    public WhatToWatchNow() throws FileNotFoundException {
+        jsonWriter = new JsonWriter(JSON_STORE);
+        jsonReader = new JsonReader(JSON_STORE);
         runApp();
     }
 
@@ -60,6 +72,8 @@ public class WhatToWatchNow {
         System.out.println("\tContent Based on Location, type lo");
         System.out.println("\tAccess your Playlist, type play");
         System.out.println("\tRemove content to your playlist, type rem");
+        System.out.println("\tsave work room to file, type s");
+        System.out.println("\tload work room from file, type load");
         System.out.println("\tquit, type q");
     }
 
@@ -86,7 +100,18 @@ public class WhatToWatchNow {
         } else if (command.equals("rem")) {
             removeContent();
         } else {
-            System.out.println("Selection not valid...");
+            persistenceJob(command);
+        }
+
+        // System.out.println("Selection not valid...");
+    }
+
+    public void persistenceJob(String command) {
+        if (command.equals("s")) {
+            saveListOfContent();
+        }
+        if (command.equals("load")) {
+            loadListOfContent();
         }
     }
 
@@ -178,5 +203,28 @@ public class WhatToWatchNow {
         s1 = input.nextLine();
         loc.removeContent(s1);
 
+    }
+
+    // EFFECTS: saves the list of Content to file
+    private void saveListOfContent() {
+        try {
+            jsonWriter.open();
+            jsonWriter.write(loc);
+            jsonWriter.close();
+            System.out.println("Saved " + loc.getName() + " to " + JSON_STORE);
+        } catch (FileNotFoundException e) {
+            System.out.println("Unable to write to file: " + JSON_STORE);
+        }
+    }
+
+    // MODIFIES: this
+    // EFFECTS: loads List of Content from file
+    private void loadListOfContent() {
+        try {
+            loc = jsonReader.read();
+            System.out.println("Loaded " + loc.getName() + " to " + JSON_STORE);
+        } catch (IOException e) {
+            System.out.println("Unable to read from file: " + JSON_STORE);
+        }
     }
 }
