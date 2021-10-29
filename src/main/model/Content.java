@@ -1,5 +1,6 @@
 package model;
 
+
 import org.json.JSONObject;
 import persistence.Writable;
 
@@ -12,6 +13,7 @@ public class Content implements Writable {
     private int ratings;
     private String location;
 
+    // represents a content with name, year (above 1900), genre, language, ratings (out of 5), and streaming site
     //REQUIRES: 1 <= rating <= 5 and year > 1900
     //MODIFIES: this
     //EFFECTS: creates a new content

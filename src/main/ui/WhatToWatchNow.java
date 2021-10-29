@@ -55,8 +55,7 @@ public class WhatToWatchNow {
     // MODIFIES: this
     // EFFECTS: initializes contents
     private void init() {
-        c1 = new Content("G.I. Joe", 1995, "Action", "Eng",
-                5, "Netflix");
+        c1 = new Content("G.I. Joe", 1995, "Action", "Eng", 5, "Netflix");
         input = new Scanner(System.in);
         input.useDelimiter("\n");
     }

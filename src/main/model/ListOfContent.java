@@ -8,10 +8,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 // represents a list of Contents
+
 public class ListOfContent implements Writable {
     private String name;
     private List<Content> loC;
     private int position;
+
 
     //EFFECTS - creates a new List of Content
     public ListOfContent(String name) {
@@ -30,7 +32,7 @@ public class ListOfContent implements Writable {
 
     //EFFECTS: checks whether the list contains a Content with the given name
     public boolean contains(String cn) {
-        for (Content l:loC) {
+        for (Content l : loC) {
             if (cn.equals(l.getName())) {
                 return true;
             }
