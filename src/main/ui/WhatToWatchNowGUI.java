@@ -5,24 +5,66 @@ import model.ListOfContent;
 import persistence.JsonReader;
 import persistence.JsonWriter;
 
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Scanner;
 
-// This class references code from the TellerApp repository
-// Link: https://github.students.cs.ubc.ca/CPSC210/TellerApp.git
-
-// What to Watch Now application
-public class WhatToWatchNow {
+public class WhatToWatchNowGUI extends JFrame {
     private static final String JSON_STORE = "./data/contentList.json";
+    public static final int WIDTH = 1000;
+    public static final int HEIGHT = 700;
     private Content c1;
     private ListOfContent loc = new ListOfContent("MyList");
     private Scanner input;
     private JsonWriter jsonWriter;
     private JsonReader jsonReader;
+    private JPanel mainPanel;
+    private JRadioButton rb1;
+    private JRadioButton rb2;
+    private JRadioButton rb3;
+    private JRadioButton rb4;
+    private JRadioButton rb5;
+    private JRadioButton rb6;
+    private JRadioButton rb7;
+    private JRadioButton rb8;
+    private JRadioButton rb9;
+    private JRadioButton rb10;
+    private JRadioButton rb11;
+
+
 
     // EFFECTS: Runs the What To Watch Now application
-    public WhatToWatchNow() throws FileNotFoundException {
+    public WhatToWatchNowGUI() throws FileNotFoundException {
+        super("What To Watch Now");
+
+        setSize(WIDTH, HEIGHT);
+        mainPanel = new JPanel();
+
+        add(mainPanel);
+
+        mainPanel.setLayout(null);
+
+//        desktop = new JDesktopPane();
+//        desktop.addMouseListener(new DesktopFocusAction());
+//        controlPanel = new JInternalFrame("Control Panel", false, false, false, false);
+//        controlPanel.setLayout(new BorderLayout());
+
+//        setContentPane(desktop);
+//        setTitle("What To Watch Now!");
+//        setSize(WIDTH, HEIGHT);
+
+//        controlPanel.pack();
+//        controlPanel.setVisible(true);
+//        desktop.add(controlPanel);
+
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+//        centreOnScreen();
+//        addButtonPanel();
+        setVisible(true);
+
         jsonWriter = new JsonWriter(JSON_STORE);
         jsonReader = new JsonReader(JSON_STORE);
 
@@ -32,88 +74,150 @@ public class WhatToWatchNow {
     // MODIFIES : this
     // EFFECTS :takes user inputs and process them
     private void runApp() {
-        boolean keepGoing = true;
-        String command = "";
+        JLabel welcomeLabel = new JLabel("Hello and welcome to the What To Watch Now app");
+        welcomeLabel.setBounds(250, 0, 400, 100);
 
-        init();
-        System.out.println("\nWelcome to the best Streaming Destination!");
+        mainPanel.add(welcomeLabel);
 
-        while (keepGoing) {
-            displayMenu();
-            command = input.next();
-            command = command.toLowerCase();
+        displayMenu();
 
-            if (command.equals("q")) {
-                keepGoing = false;
-            } else {
-                processCommand(command);
-            }
-        }
 
-        System.out.println("\nGoodbye!");
+//        boolean keepGoing = true;
+//        String command = "";
+//
+//        init();
+//        System.out.println("\nWelcome to the best Streaming Destination!");
+//
+//        while (keepGoing) {
+//            displayMenu();
+//            command = input.next();
+//            command = command.toLowerCase();
+//
+//            if (command.equals("q")) {
+//                keepGoing = false;
+//            } else {
+//                processCommand(command);
+//            }
+//        }
+//
+//        System.out.println("\nGoodbye!");
     }
 
     // MODIFIES: this
     // EFFECTS: initializes contents
-    private void init() {
-        c1 = new Content("G.I. Joe", 1995, "Action", "Eng", 5, "Netflix");
-        input = new Scanner(System.in);
-        input.useDelimiter("\n");
-    }
+//    private void init() {
+//        c1 = new Content("G.I. Joe", 1995, "Action", "Eng", 5, "Netflix");
+//        input = new Scanner(System.in);
+//        input.useDelimiter("\n");
+//    }
 
     // EFFECTS: displays menu of options to user
     private void displayMenu() {
-        System.out.println("\nSelect from:");
-        System.out.println("\tAdd content to your playlist, type add");
-        System.out.println("\tContent Based on Year, type y");
-        System.out.println("\tContent Based on Genre, type g");
-        System.out.println("\tContent Based on Language, type l");
-        System.out.println("\tContent Based on Ratings, type r");
-        System.out.println("\tContent Based on Location, type lo");
-        System.out.println("\tAccess your Playlist, type play");
-        System.out.println("\tRemove content to your playlist, type rem");
-        System.out.println("\tsave List of Contents to file, type s");
-        System.out.println("\tload List of Contents from file, type load");
-        System.out.println("\tquit, type q");
+
+        JLabel selectOperation = new JLabel("Please select from the given options:");
+        selectOperation.setBounds(0, 100, 400, 25);
+        mainPanel.add(selectOperation);
+
+
+        rb1 = new JRadioButton("Add content to your playlist");
+        rb1.setBounds(0, 140, 400, 20);
+        mainPanel.add(rb1);
+
+        rb2 = new JRadioButton("Filter Content Based on Year");
+        rb2.setBounds(0, 140, 400, 20);
+        mainPanel.add(rb2);
+
+        rb3 = new JRadioButton("Filter Content Based on Genre");
+        rb3.setBounds(0, 140, 400, 20);
+        mainPanel.add(rb3);
+
+        rb4 = new JRadioButton("Filter Content Based on Language");
+        rb4.setBounds(0, 140, 400, 20);
+        mainPanel.add(rb4);
+
+        rb5 = new JRadioButton("Filter Content Based on Ratings");
+        rb5.setBounds(0, 140, 400, 20);
+        mainPanel.add(rb5);
+
+        rb6 = new JRadioButton("Filter Content Based on Location");
+        rb6.setBounds(0, 140, 400, 20);
+        mainPanel.add(rb6);
+
+        rb7 = new JRadioButton("Access your playlist");
+        rb7.setBounds(0, 140, 400, 20);
+        mainPanel.add(rb7);
+
+        rb8 = new JRadioButton("Remove Content from your playlist");
+        rb8.setBounds(0, 140, 400, 20);
+        mainPanel.add(rb8);
+
+        rb9 = new JRadioButton("Save list of Contents");
+        rb9.setBounds(0, 140, 400, 20);
+        mainPanel.add(rb9);
+
+        rb10 = new JRadioButton("Load List of contents form file");
+        rb10.setBounds(0, 140, 400, 20);
+        mainPanel.add(rb10);
+
+        rb11 = new JRadioButton("Close Application");
+        rb11.setBounds(0, 140, 400, 20);
+        mainPanel.add(rb11);
+
+        ButtonGroup bg = new ButtonGroup();
+
+        bg.add(rb1);
+        bg.add(rb2);
+        bg.add(rb3);
+        bg.add(rb4);
+        bg.add(rb5);
+        bg.add(rb6);
+        bg.add(rb7);
+        bg.add(rb8);
+        bg.add(rb9);
+        bg.add(rb10);
+        bg.add(rb11);
+
+
+        JButton okButton = new JButton("Ok");
+        okButton.setBounds(0, 320, 60, 20);
+        mainPanel.add(okButton);
+
+        okButton.addActionListener(ae -> {
+            processCommand();
+        });
+
     }
 
     // MODIFIES: this
     // EFFECTS: processes user command
-    private void processCommand(String command) {
-        if (command.equals("add")) {
+    private void processCommand() {
+        if (rb1.isSelected()) {
             addContentToPlaylist();
-        } else if (command.equals("y")) {
+        } else if (rb2.isSelected()) {
             giveContentOnYear();
-        } else if (command.equals("g")) {
+        } else if (rb3.isSelected()) {
             giveContentOnGenre();
-        } else if (command.equals("l")) {
+        } else if (rb4.isSelected()) {
             giveContentOnLanguage();
-        } else if (command.equals("r")) {
+        } else if (rb5.isSelected()) {
             giveContentOnRatings();
-        } else if (command.equals("lo")) {
+        } else if (rb6.isSelected()) {
             giveContentOnLocation();
 
-        } else if (command.equals("play")) {
+        } else if (rb7.isSelected()) {
             System.out.println("Here is your list of Contents: ");
-            System.out.println(loc.getNames());
+            //System.out.println(loc.getNames());
+            JList loc = new JList();
 
-        } else if (command.equals("rem")) {
+        } else if (rb8.isSelected()) {
             removeContent();
-        } else {
-            persistenceJob(command);
-        }
-
-        // System.out.println("Selection not valid...");
-    }
-
-    public void persistenceJob(String command) {
-        if (command.equals("s")) {
+        } else if (rb9.isSelected()) {
             saveListOfContent();
-        }
-        if (command.equals("load")) {
+        } else if (rb10.isSelected()) {
             loadListOfContent();
         }
     }
+
 
     // MODIFIES - this
     // EFFECTS - creates a new Content class from user descriptions and adds them to a playlist

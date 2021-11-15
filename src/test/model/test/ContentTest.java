@@ -29,7 +29,6 @@ public class ContentTest {
         assertEquals("Horror",h2.getGenre());
         assertEquals("spn",h2.getLanguage());
         assertEquals("Disney",h4.getLocation());
-
     }
 
     @Test
@@ -43,7 +42,5 @@ public class ContentTest {
         h2.setRating(5);
         h2.setRating(1);
         assertEquals(1, h2.getRatings());
-
-
     }
 }
