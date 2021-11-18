@@ -1,21 +1,11 @@
 {
-    "loc": [
-        {
-            "site": "netflix",
-            "year": 1666,
-            "ratings": 5,
-            "name": "ab",
-            "genre": "comedy",
-            "language": "eng"
-        },
-        {
-            "site": "net",
-            "year": 4666,
-            "ratings": 5,
-            "name": "efg",
-            "genre": "coem",
-            "language": "eng"
-        }
-    ],
+    "loc": [{
+        "site": "net",
+        "year": 5555,
+        "ratings": 5,
+        "name": "Abc",
+        "genre": "cm",
+        "language": "kn"
+    }],
     "name": "MyList"
 }

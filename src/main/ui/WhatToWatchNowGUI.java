@@ -4,41 +4,69 @@ import model.Content;
 import model.ListOfContent;
 import persistence.JsonReader;
 import persistence.JsonWriter;
+import ui.gui.*;
 
-import java.awt.*;
-import java.awt.event.*;
 import javax.swing.*;
+import java.awt.*;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
 import java.util.Scanner;
 
 public class WhatToWatchNowGUI extends JFrame {
     private static final String JSON_STORE = "./data/contentList.json";
-    public static final int WIDTH = 1000;
-    public static final int HEIGHT = 700;
-    private Content c1;
+    public static final int WIDTH = 800;
+    public static final int HEIGHT = 800;
     private ListOfContent loc = new ListOfContent("MyList");
-    private Scanner input;
     private JsonWriter jsonWriter;
     private JsonReader jsonReader;
     private JPanel mainPanel;
-    private JRadioButton rb1;
-    private JRadioButton rb2;
-    private JRadioButton rb3;
-    private JRadioButton rb4;
-    private JRadioButton rb5;
-    private JRadioButton rb6;
-    private JRadioButton rb7;
-    private JRadioButton rb8;
-    private JRadioButton rb9;
-    private JRadioButton rb10;
-    private JRadioButton rb11;
-
+    private JRadioButton rb1 = new JRadioButton();
+    private JRadioButton rb2 = new JRadioButton();
+    private JRadioButton rb3 = new JRadioButton();
+    private JRadioButton rb4 = new JRadioButton();
+    private JRadioButton rb5 = new JRadioButton();
+    private JRadioButton rb6 = new JRadioButton();
+    private JRadioButton rb7 = new JRadioButton();
+    private JRadioButton rb8 = new JRadioButton();
+    private JRadioButton rb9 = new JRadioButton();
+    private JRadioButton rb10 = new JRadioButton();
+    private JRadioButton rb11 = new JRadioButton();
+    private List<JRadioButton> radioList;
+    private String s1 = "Add Content to your list";
+    private String s2 = "Filter Content Based on Year";
+    private String s3 = "Filter Content Based on Genre";
+    private String s4 = "Filter Content Based on Language";
+    private String s5 = "Filter Content Based on Ratings";
+    private String s6 = "Filter Content Based on Location";
+    private String s7 = "Access your playlist";
+    private String s8 = "Remove Content from your playlist";
+    private String s9 = "Save list of Content";
+    private String s10 = "Load List of Contents from file";
+    private String s11 = "Close Application";
+    private List<String> strings;
 
 
     // EFFECTS: Runs the What To Watch Now application
     public WhatToWatchNowGUI() throws FileNotFoundException {
         super("What To Watch Now");
+
+        strings = new ArrayList<>();
+        radioList = new ArrayList<>();
+        radioList.add(rb1);
+        radioList.add(rb2);
+        radioList.add(rb3);
+        radioList.add(rb4);
+        radioList.add(rb5);
+        radioList.add(rb6);
+        radioList.add(rb7);
+        radioList.add(rb8);
+        radioList.add(rb9);
+        radioList.add(rb10);
+        radioList.add(rb11);
+
 
         setSize(WIDTH, HEIGHT);
         mainPanel = new JPanel();
@@ -47,22 +75,7 @@ public class WhatToWatchNowGUI extends JFrame {
 
         mainPanel.setLayout(null);
 
-//        desktop = new JDesktopPane();
-//        desktop.addMouseListener(new DesktopFocusAction());
-//        controlPanel = new JInternalFrame("Control Panel", false, false, false, false);
-//        controlPanel.setLayout(new BorderLayout());
-
-//        setContentPane(desktop);
-//        setTitle("What To Watch Now!");
-//        setSize(WIDTH, HEIGHT);
-
-//        controlPanel.pack();
-//        controlPanel.setVisible(true);
-//        desktop.add(controlPanel);
-
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-//        centreOnScreen();
-//        addButtonPanel();
         setVisible(true);
 
         jsonWriter = new JsonWriter(JSON_STORE);
@@ -74,42 +87,35 @@ public class WhatToWatchNowGUI extends JFrame {
     // MODIFIES : this
     // EFFECTS :takes user inputs and process them
     private void runApp() {
+        strings.add(s1);
+        strings.add(s2);
+        strings.add(s3);
+        strings.add(s4);
+        strings.add(s5);
+        strings.add(s6);
+        strings.add(s7);
+        strings.add(s8);
+        strings.add(s9);
+        strings.add(s10);
+        strings.add(s11);
+
         JLabel welcomeLabel = new JLabel("Hello and welcome to the What To Watch Now app");
         welcomeLabel.setBounds(250, 0, 400, 100);
 
         mainPanel.add(welcomeLabel);
+        centreOnScreen();
 
         displayMenu();
-
-
-//        boolean keepGoing = true;
-//        String command = "";
-//
-//        init();
-//        System.out.println("\nWelcome to the best Streaming Destination!");
-//
-//        while (keepGoing) {
-//            displayMenu();
-//            command = input.next();
-//            command = command.toLowerCase();
-//
-//            if (command.equals("q")) {
-//                keepGoing = false;
-//            } else {
-//                processCommand(command);
-//            }
-//        }
-//
-//        System.out.println("\nGoodbye!");
     }
 
-    // MODIFIES: this
-    // EFFECTS: initializes contents
-//    private void init() {
-//        c1 = new Content("G.I. Joe", 1995, "Action", "Eng", 5, "Netflix");
-//        input = new Scanner(System.in);
-//        input.useDelimiter("\n");
-//    }
+    /**
+     * Helper to centre main application window on desktop
+     */
+    private void centreOnScreen() {
+        int width = Toolkit.getDefaultToolkit().getScreenSize().width;
+        int height = Toolkit.getDefaultToolkit().getScreenSize().height;
+        setLocation((width - getWidth()) / 2, (height - getHeight()) / 2);
+    }
 
     // EFFECTS: displays menu of options to user
     private void displayMenu() {
@@ -118,73 +124,24 @@ public class WhatToWatchNowGUI extends JFrame {
         selectOperation.setBounds(0, 100, 400, 25);
         mainPanel.add(selectOperation);
 
-
-        rb1 = new JRadioButton("Add content to your playlist");
-        rb1.setBounds(0, 140, 400, 20);
-        mainPanel.add(rb1);
-
-        rb2 = new JRadioButton("Filter Content Based on Year");
-        rb2.setBounds(0, 140, 400, 20);
-        mainPanel.add(rb2);
-
-        rb3 = new JRadioButton("Filter Content Based on Genre");
-        rb3.setBounds(0, 140, 400, 20);
-        mainPanel.add(rb3);
-
-        rb4 = new JRadioButton("Filter Content Based on Language");
-        rb4.setBounds(0, 140, 400, 20);
-        mainPanel.add(rb4);
-
-        rb5 = new JRadioButton("Filter Content Based on Ratings");
-        rb5.setBounds(0, 140, 400, 20);
-        mainPanel.add(rb5);
-
-        rb6 = new JRadioButton("Filter Content Based on Location");
-        rb6.setBounds(0, 140, 400, 20);
-        mainPanel.add(rb6);
-
-        rb7 = new JRadioButton("Access your playlist");
-        rb7.setBounds(0, 140, 400, 20);
-        mainPanel.add(rb7);
-
-        rb8 = new JRadioButton("Remove Content from your playlist");
-        rb8.setBounds(0, 140, 400, 20);
-        mainPanel.add(rb8);
-
-        rb9 = new JRadioButton("Save list of Contents");
-        rb9.setBounds(0, 140, 400, 20);
-        mainPanel.add(rb9);
-
-        rb10 = new JRadioButton("Load List of contents form file");
-        rb10.setBounds(0, 140, 400, 20);
-        mainPanel.add(rb10);
-
-        rb11 = new JRadioButton("Close Application");
-        rb11.setBounds(0, 140, 400, 20);
-        mainPanel.add(rb11);
-
         ButtonGroup bg = new ButtonGroup();
 
-        bg.add(rb1);
-        bg.add(rb2);
-        bg.add(rb3);
-        bg.add(rb4);
-        bg.add(rb5);
-        bg.add(rb6);
-        bg.add(rb7);
-        bg.add(rb8);
-        bg.add(rb9);
-        bg.add(rb10);
-        bg.add(rb11);
+        for (int i = 0, j = 140; i <= 11 && j <= 340; i++, j += 20) {
 
+            radioList.get(i).setText(strings.get(i));
+            radioList.get(i).setBounds(0, j, 400, 20);
+            mainPanel.add(radioList.get(i));
+            bg.add(radioList.get(i));
+        }
 
         JButton okButton = new JButton("Ok");
-        okButton.setBounds(0, 320, 60, 20);
+        okButton.setBounds(10, 380, 60, 20);
         mainPanel.add(okButton);
 
         okButton.addActionListener(ae -> {
             processCommand();
         });
+
 
     }
 
@@ -192,121 +149,51 @@ public class WhatToWatchNowGUI extends JFrame {
     // EFFECTS: processes user command
     private void processCommand() {
         if (rb1.isSelected()) {
-            addContentToPlaylist();
+            new AddContent(loc);
         } else if (rb2.isSelected()) {
-            giveContentOnYear();
+            new ContentByYear(loc);
         } else if (rb3.isSelected()) {
-            giveContentOnGenre();
+            new ContentByGenre(loc);
         } else if (rb4.isSelected()) {
-            giveContentOnLanguage();
+            new ContentByLanguage(loc);;
         } else if (rb5.isSelected()) {
-            giveContentOnRatings();
+            new ContentByRatings(loc);;
         } else if (rb6.isSelected()) {
-            giveContentOnLocation();
-
+            new ContentByLocation(loc);;
         } else if (rb7.isSelected()) {
-            System.out.println("Here is your list of Contents: ");
-            //System.out.println(loc.getNames());
-            JList loc = new JList();
-
+            new AccessList(loc);
         } else if (rb8.isSelected()) {
             removeContent();
         } else if (rb9.isSelected()) {
             saveListOfContent();
         } else if (rb10.isSelected()) {
             loadListOfContent();
+        } else {
+            exit();
+        }
+    }
+
+    private void exit() {
+        if (rb11.isSelected()) {
+            if (0 == JOptionPane.showConfirmDialog(mainPanel,
+                    "Are you sure?", "Confirm exit", JOptionPane.YES_NO_OPTION)) {
+                System.exit(0);
+            }
         }
     }
 
 
-    // MODIFIES - this
-    // EFFECTS - creates a new Content class from user descriptions and adds them to a playlist
-    private void addContentToPlaylist() {
-        String name;
-        int year;
-        String genre;
-        String lang;
-        int ratings;
-        String location;
-        Scanner sc = new Scanner(System.in);
-
-        System.out.println("Enter the name of the Content: ");
-        name = sc.nextLine();
-        System.out.println("Enter the year of the Content: ");
-        year = sc.nextInt();
-        System.out.println("Enter the genre of the Content: ");
-        genre = sc.next();
-        System.out.println("Enter your ratings for the Content: ");
-        ratings = sc.nextInt();
-        System.out.println("Enter the language of the Content: ");
-        lang = sc.next();
-        System.out.println("Enter the location of the Content: ");
-        location = sc.next();
-        System.out.println("And, That's It!");
-
-        Content c = new Content(name, year, genre, lang, ratings, location);
-        loc.addToList(c);
-    }
-
-    //EFFECTS: returns the list of contents of a specific year as per the user entry
-    private void giveContentOnYear() {
-        input = new Scanner(System.in);
-        int y1;
-        System.out.println("Enter year: ");
-        y1 = input.nextInt();
-        System.out.println("Here is the list of Contents based on this year: ");
-        System.out.println(loc.contentbyYear(y1));
-    }
-
-    //EFFECTS: returns the list of contents of a specific genre as per the user entry
-    private void giveContentOnGenre() {
-        input = new Scanner(System.in);
-        String g1;
-        System.out.println("Enter Genre: ");
-        g1 = input.nextLine();
-        System.out.println("Here is the list of Contents based on this genre: ");
-        System.out.println(loc.contentbyGenre(g1));
-    }
-
-    //EFFECTS: returns the list of contents of a specific language as per the user entry
-    private void giveContentOnLanguage() {
-        input = new Scanner(System.in);
-        String l1;
-        System.out.println("Enter first three letters of Language: ");
-        l1 = input.nextLine();
-        System.out.println("Here is the list of Contents based on this language: ");
-        System.out.println(loc.contentbyLang(l1));
-    }
-
-    //EFFECTS: returns the list of contents of a specific rating as per the user entry
-    private void giveContentOnRatings() {
-        input = new Scanner(System.in);
-        int r1;
-        System.out.println("Enter rating: ");
-        r1 = input.nextInt();
-        System.out.println("Here is the list of Contents based on this rating: ");
-        System.out.println(loc.contentbyRatings(r1));
-    }
-
-    //EFFECTS: returns the list of contents of a specific streaming site as per the user entry
-    private void giveContentOnLocation() {
-        input = new Scanner(System.in);
-        String lo1;
-        System.out.println("Enter Site: ");
-        lo1 = input.nextLine();
-        System.out.println("Here is the list of Contents on this Site: ");
-        System.out.println(loc.contentbySite(lo1));
-    }
-
     //MODIFIES: this
     //EFFECTS: removes the Content with the same name as per user entry, from the list of Contents
     private void removeContent() {
-        input = new Scanner(System.in);
         String s1;
-        System.out.println("Enter name of the Content you wish to remove from the list: ");
-        s1 = input.nextLine();
-        loc.removeContent(s1);
+        s1 = JOptionPane.showInputDialog(mainPanel,
+                "Enter name of the Content you wish to remove from the list: ");
 
+        if (!Objects.equals(s1, null)) {
+            loc.removeContent(s1);
+            JOptionPane.showMessageDialog(mainPanel, "Content removed Successfully!");
+        }
     }
 
     // EFFECTS: saves the list of Content to file
@@ -315,9 +202,9 @@ public class WhatToWatchNowGUI extends JFrame {
             jsonWriter.open();
             jsonWriter.write(loc);
             jsonWriter.close();
-            System.out.println("Saved " + loc.getName() + " to " + JSON_STORE);
+            JOptionPane.showMessageDialog(mainPanel, "Saved " + loc.getName() + " to " + JSON_STORE);
         } catch (FileNotFoundException e) {
-            System.out.println("Unable to write to file: " + JSON_STORE);
+            JOptionPane.showMessageDialog(mainPanel, "Unable to write to file: " + JSON_STORE);
         }
     }
 
@@ -326,9 +213,9 @@ public class WhatToWatchNowGUI extends JFrame {
     private void loadListOfContent() {
         try {
             loc = jsonReader.read();
-            System.out.println("Loaded " + loc.getName() + " to " + JSON_STORE);
+            JOptionPane.showMessageDialog(mainPanel, "Loaded " + loc.getName() + " to " + JSON_STORE);
         } catch (IOException e) {
-            System.out.println("Unable to read from file: " + JSON_STORE);
+            JOptionPane.showMessageDialog(mainPanel, "Unable to read from file: " + JSON_STORE);
         }
     }
 }
