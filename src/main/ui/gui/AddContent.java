@@ -48,7 +48,6 @@ public class AddContent extends JFrame implements ActionListener {
 
         panel.setLayout(null);
 
-
         getNameLabelAndText();
 
         getRatingLabelAndText();
@@ -67,20 +66,24 @@ public class AddContent extends JFrame implements ActionListener {
 
     }
 
+    // MODIFIES: this, main
+    // EFFECTS : adds Ok and Back buttons with action listeners and bounds to new panel
     private void getButtons() {
         JButton store = new JButton("OK");
-        store.setBounds(150,200,200,20);
+        store.setBounds(100,200,200,20);
         store.addActionListener(this);
         panel.add(store);
 
         JButton backButton = new JButton("Back");
-        backButton.setBounds(400,190,200,20);
+        backButton.setBounds(320,200,200,20);
         backButton.addActionListener(e -> {
             dispose();
         });
         panel.add(backButton);
     }
 
+    // MODIFIES: this, main
+    // EFFECTS : adds language label and textfield with bounds to new panel
     private void getLanguageLabelAndText() {
         langLabel = new JLabel("Enter the language of the Content: ");
         langLabel.setBounds(10, 170, 200, 20);
@@ -91,6 +94,8 @@ public class AddContent extends JFrame implements ActionListener {
         panel.add(langText);
     }
 
+    // MODIFIES: this, main
+    // EFFECTS : adds genre label and textfield with bounds to new panel
     private void getGenreLabelAndText() {
         genreLabel = new JLabel("Enter the genre of the Content: ");
         genreLabel.setBounds(10, 140, 200, 20);
@@ -101,6 +106,8 @@ public class AddContent extends JFrame implements ActionListener {
         panel.add(genreText);
     }
 
+    // MODIFIES: this, main
+    // EFFECTS : adds year label and textfield with bounds to new panel
     private void getYearLabelAndText() {
         yearLabel = new JLabel("Enter the year of the Content: ");
         yearLabel.setBounds(10, 110, 200, 20);
@@ -111,6 +118,8 @@ public class AddContent extends JFrame implements ActionListener {
         panel.add(yearText);
     }
 
+    // MODIFIES: this, main
+    // EFFECTS : adds location label and textfield with bounds to new panel
     private void getLocationLabelAndText() {
         locationLabel = new JLabel("Enter the Location of the Content: ");
         locationLabel.setBounds(10, 80, 300, 20);
@@ -121,6 +130,8 @@ public class AddContent extends JFrame implements ActionListener {
         panel.add(locationText);
     }
 
+    // MODIFIES: this, main
+    // EFFECTS : adds ratings label and textfield with bounds to new panel
     private void getRatingLabelAndText() {
         ratingLabel = new JLabel("Enter your rating (out of 5) for the Content: ");
         ratingLabel.setBounds(10, 50, 300, 20);
@@ -131,6 +142,8 @@ public class AddContent extends JFrame implements ActionListener {
         panel.add(ratingText);
     }
 
+    // MODIFIES: this, main
+    // EFFECTS : adds name label and textfield with bounds to new panel
     private void getNameLabelAndText() {
         nameLabel = new JLabel("Enter the name of the Content: ");
         nameLabel.setBounds(10, 20, 200, 20);

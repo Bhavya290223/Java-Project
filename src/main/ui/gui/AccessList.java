@@ -8,15 +8,15 @@ import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
 public class AccessList extends JFrame implements ListSelectionListener {
-    JPanel accessPanel;
-    ListOfContent loc;
-    JLabel nameLabel;
-    JLabel yearLabel;
-    JLabel ratingLabel;
-    JLabel genreLabel;
-    JLabel locationLabel;
-    JLabel langLabel;
-    JList list;
+    private JPanel accessPanel;
+    private ListOfContent loc;
+    private JLabel nameLabel;
+    private JLabel yearLabel;
+    private JLabel ratingLabel;
+    private JLabel genreLabel;
+    private JLabel locationLabel;
+    private JLabel langLabel;
+    private JList list;
 
     public AccessList(ListOfContent loc) {
         this.loc = loc;

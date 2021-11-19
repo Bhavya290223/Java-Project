@@ -37,11 +37,11 @@ public class ContentByLanguage extends JFrame implements ActionListener {
         panel.add(languageText);
 
         answerLabel = new JLabel();
-        answerLabel.setBounds(100, 150, 340, 20);
+        answerLabel.setBounds(100, 260, 340, 20);
         panel.add(answerLabel);
 
         ok = new JButton("OK");
-        ok.setBounds(150, 200, 200, 20);
+        ok.setBounds(150, 200, 80, 20);
         panel.add(ok);
         ok.addActionListener(this);
 
@@ -50,9 +50,11 @@ public class ContentByLanguage extends JFrame implements ActionListener {
         setVisible(true);
     }
 
+    // MODIFIES: this, main
+    // EFFECTS : adds Back button with action listener and bound to new panel
     private void backButton() {
         JButton backButton = new JButton("Back");
-        backButton.setBounds(410, 80, 80, 20);
+        backButton.setBounds(250, 200, 80, 20);
         backButton.addActionListener(e -> {
             dispose();
         });
@@ -70,6 +72,8 @@ public class ContentByLanguage extends JFrame implements ActionListener {
         jsp.revalidate();
     }
 
+    // MODIFIES: this, jsp
+    // EFFECTS : displays list by language in a new scroll pane with bounds and adds it to panel
     private void displayList() {
         answerLabel.setText("Here is the list of Contents of this language: ");
 
@@ -87,7 +91,7 @@ public class ContentByLanguage extends JFrame implements ActionListener {
         list = new JList(names);
 
         jsp = new JScrollPane(list);
-        jsp.setBounds(100,180,300,80);
+        jsp.setBounds(100,280,300,80);
         panel.add(jsp,list);
     }
 }
