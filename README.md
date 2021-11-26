@@ -39,8 +39,9 @@ A sample of the event log generated is:
 
 ## Phase 4: Task 3
 
-I would have done the following things:
+I would have done the following additions:
 
-- used HashSet to store list of Contents as it is fast and handles duplication
+- Used HashSet to store list of Contents as it is fast and handles duplication
 - Used more exceptions to increase robustness and bounds
 - Avoided duplication in classes in gui package, by creating a superclass
+- displayOptions() method in WhatToWatchNowGUI has generate methods that have a lot of similarities, that could be avoided by calling a generic helper method in all others
