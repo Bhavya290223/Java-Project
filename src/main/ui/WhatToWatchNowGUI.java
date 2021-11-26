@@ -1,5 +1,7 @@
 package ui;
 
+import model.Event;
+import model.EventLog;
 import model.ListOfContent;
 import persistence.JsonReader;
 import persistence.JsonWriter;
@@ -36,6 +38,7 @@ public class WhatToWatchNowGUI extends JFrame {
     private Font f3;
     private Font f4;
 
+    // MODIFIES: this
     // EFFECTS: Runs the What To Watch Now application
     public WhatToWatchNowGUI() throws FileNotFoundException {
         super("What To Watch Now");
@@ -86,7 +89,7 @@ public class WhatToWatchNowGUI extends JFrame {
         setLocation((width - getWidth()) / 2, (height - getHeight()) / 2);
     }
 
-    // MODIFIES : main, bg, this
+    // MODIFIES : bg, this
     // EFFECTS: displays menu of options to user
     private void displayOptions() {
 
@@ -131,7 +134,7 @@ public class WhatToWatchNowGUI extends JFrame {
         setVisible(true);
     }
 
-    // MODIFIES : main, this
+    // MODIFIES : this
     // EFFECTS : generates close button with font and bounds. Adds button to panel and buttongroup
     private void generateClose() {
         rb11 = new JRadioButton("Close Application");
@@ -141,7 +144,7 @@ public class WhatToWatchNowGUI extends JFrame {
         bg.add(rb11);
     }
 
-    // MODIFIES : main, this
+    // MODIFIES : this
     // EFFECTS : generates load button with font and bounds. Adds button to panel and buttongroup
     private void generateLoad() {
         rb10 = new JRadioButton("Load List of Contents from file");
@@ -151,7 +154,7 @@ public class WhatToWatchNowGUI extends JFrame {
         bg.add(rb10);
     }
 
-    // MODIFIES : main, this
+    // MODIFIES : this
     // EFFECTS : generates save button with font and bounds. Adds button to panel and buttongroup
     private void generateSave() {
         rb9 = new JRadioButton("Save list of Content");
@@ -161,7 +164,7 @@ public class WhatToWatchNowGUI extends JFrame {
         bg.add(rb9);
     }
 
-    // MODIFIES : main, this
+    // MODIFIES : this
     // EFFECTS : generates remove button with font and bounds. Adds button to panel and buttongroup
     private void generateRemove() {
         rb8 = new JRadioButton("Remove Content from your playlist");
@@ -171,7 +174,7 @@ public class WhatToWatchNowGUI extends JFrame {
         bg.add(rb8);
     }
 
-    // MODIFIES : main, this
+    // MODIFIES : this
     // EFFECTS : generates AccessList button with font and bounds. Adds button to panel and buttongroup
     private void generateAccess() {
         rb7 = new JRadioButton("Access your playlist");
@@ -181,7 +184,7 @@ public class WhatToWatchNowGUI extends JFrame {
         bg.add(rb7);
     }
 
-    // MODIFIES : main, this
+    // MODIFIES : this
     // EFFECTS : generates ratings button with font and bounds. Adds button to panel and buttongroup
     private void generateRatings() {
         rb6 = new JRadioButton("Filter Content Based on Location");
@@ -191,7 +194,7 @@ public class WhatToWatchNowGUI extends JFrame {
         bg.add(rb6);
     }
 
-    // MODIFIES : main, this
+    // MODIFIES : this
     // EFFECTS : generates genre button with font and bounds. Adds button to panel and buttongroup
     private void generateGenre() {
         rb5 = new JRadioButton("Filter Content Based on Ratings");
@@ -201,7 +204,7 @@ public class WhatToWatchNowGUI extends JFrame {
         bg.add(rb5);
     }
 
-    // MODIFIES : main, this
+    // MODIFIES : this
     // EFFECTS : generates language button with font and bounds. Adds button to panel and buttongroup
     private void generateLanguage() {
         rb4 = new JRadioButton("Filter Content Based on Language");
@@ -211,7 +214,7 @@ public class WhatToWatchNowGUI extends JFrame {
         bg.add(rb4);
     }
 
-    // MODIFIES : main, this
+    // MODIFIES : this
     // EFFECTS : generates location button with font and bounds. Adds button to panel and buttongroup
     private void generateLocation() {
         rb3 = new JRadioButton("Filter Content Based on Genre");
@@ -221,7 +224,7 @@ public class WhatToWatchNowGUI extends JFrame {
         bg.add(rb3);
     }
 
-    // MODIFIES : main, this
+    // MODIFIES : this
     // EFFECTS : generates year button with font and bounds. Adds button to panel and buttongroup
     private void generateYear() {
         rb2 = new JRadioButton("Filter Content Based on Year");
@@ -231,7 +234,7 @@ public class WhatToWatchNowGUI extends JFrame {
         bg.add(rb2);
     }
 
-    // MODIFIES : main, this
+    // MODIFIES : this
     // EFFECTS : generates add button with font and bounds. Adds button to panel and buttongroup
     private void generateAdd() {
         rb1 = new JRadioButton("Add Content to your list");
@@ -275,6 +278,11 @@ public class WhatToWatchNowGUI extends JFrame {
         if (rb11.isSelected()) {
             if (0 == JOptionPane.showConfirmDialog(main,
                     "Are you sure?", "Confirm exit", JOptionPane.YES_NO_OPTION)) {
+
+                for (Event next : EventLog.getInstance()) {
+                    System.out.println(next.toString() + "\n");
+                }
+
                 System.exit(0);
             }
         }

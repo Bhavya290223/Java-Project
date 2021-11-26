@@ -19,6 +19,7 @@ public class ContentByLanguage extends JFrame implements ActionListener {
     private JScrollPane jsp;
 
 
+    // JFrame that filters list of Contents according to Language
     public ContentByLanguage(ListOfContent loc) {
         this.loc = loc;
         setSize(800, 800);
@@ -50,7 +51,7 @@ public class ContentByLanguage extends JFrame implements ActionListener {
         setVisible(true);
     }
 
-    // MODIFIES: this, main
+    // MODIFIES: this
     // EFFECTS : adds Back button with action listener and bound to new panel
     private void backButton() {
         JButton backButton = new JButton("Back");
@@ -61,6 +62,8 @@ public class ContentByLanguage extends JFrame implements ActionListener {
         panel.add(backButton);
     }
 
+    //MODIFIES: this
+    //EFFECTS: renders the scroll pane
     @Override
     public void actionPerformed(ActionEvent e) {
         if (jsp != null) {

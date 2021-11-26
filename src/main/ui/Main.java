@@ -16,6 +16,8 @@ public class Main {
     }
 
 
+    // MODIFIES : window
+    // EFFECTS: displays an image at center with bounds in a new window for 2 seconds
     private static void displaySplashScreen() {
         JWindow window = new JWindow();
         ImageIcon logo = new ImageIcon("./data/tobs.jpg");

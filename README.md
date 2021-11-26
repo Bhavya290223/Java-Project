@@ -28,3 +28,20 @@ As a user, I want to be able to:
 - Add a content
 - save the list I created. 
 - load the list I have saved.
+
+## Phase 4: Task 2
+
+A sample of the event log generated is:
+
+- Tue Nov 23 21:53:44 PST 2021 Saved MyList
+- Wed Nov 24 12:29:44 PST 2021 Loaded MyList
+- Thu Nov 25 21:00:44 PST 2021 Added abc to LOC
+
+## Phase 4: Task 3
+
+I would have done the following things:
+
+- used HashSet to store list of Contents as it is fast and handles duplication
+- added more bounds to the fields of the Content
+- Avoided duplication in classes in gui package, by creating a superclass
+- Added more graphics

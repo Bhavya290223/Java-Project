@@ -85,6 +85,7 @@ public class ListOfContent implements Writable {
                 n.add(c.getName());
             }
         }
+        EventLog.getInstance().logEvent(new Event("Filtered LOC by Year: " + newYear));
         return n;
     }
 
@@ -97,6 +98,7 @@ public class ListOfContent implements Writable {
                 n.add(c.getName());
             }
         }
+        EventLog.getInstance().logEvent(new Event("Filtered LOC by Genre: " + newGenre));
         return n;
     }
 
@@ -109,6 +111,7 @@ public class ListOfContent implements Writable {
                 n.add(c.getName());
             }
         }
+        EventLog.getInstance().logEvent(new Event("Filtered LOC by Language: " + newLang));
         return n;
     }
 
@@ -121,6 +124,7 @@ public class ListOfContent implements Writable {
                 n.add(c.getName());
             }
         }
+        EventLog.getInstance().logEvent(new Event("Filtered LOC by Ratings: " + newRatings));
         return n;
     }
 
@@ -133,6 +137,7 @@ public class ListOfContent implements Writable {
                 n.add(c.getName());
             }
         }
+        EventLog.getInstance().logEvent(new Event("Filtered LOC by Location: " + newSite));
         return n;
     }
 
@@ -141,6 +146,7 @@ public class ListOfContent implements Writable {
     public void addToList(Content c) {
         if (!loC.contains(c)) {
             loC.add(c);
+            EventLog.getInstance().logEvent(new Event("Added " + c.getName() + " to LOC"));
         }
     }
 
@@ -165,6 +171,7 @@ public class ListOfContent implements Writable {
     //EFFECTS: removes a content from the list of content
     public void removeContent(String name) {
         loC.removeIf(h -> h.getName().equals(name));
+        EventLog.getInstance().logEvent(new Event("Removed " + name + " from LOC"));
     }
 
     @Override
@@ -172,10 +179,11 @@ public class ListOfContent implements Writable {
         JSONObject json = new JSONObject();
         json.put("name", name);
         json.put("loc", loCToJson());
+        EventLog.getInstance().logEvent(new Event("Saved " + name));
         return json;
     }
 
-    //EFFECTS: return contents in this list of restaurants as a JSON array
+    //EFFECTS: return contents in this list of Contents as a JSON array
     private JSONArray loCToJson() {
         JSONArray jsonArray = new JSONArray();
 

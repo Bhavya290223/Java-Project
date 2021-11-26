@@ -7,6 +7,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.List;
 
+// JFrame that filters list of Contents according to the Year
 public class ContentByYear extends JFrame implements ActionListener {
 
     private int y1;
@@ -19,7 +20,7 @@ public class ContentByYear extends JFrame implements ActionListener {
     private JButton ok;
     private JScrollPane jsp;
 
-
+    // EFFECTS: constructs panel for displaying filter by year
     public ContentByYear(ListOfContent loc) {
         this.loc = loc;
         setSize(800, 800);
@@ -51,7 +52,7 @@ public class ContentByYear extends JFrame implements ActionListener {
         setVisible(true);
     }
 
-    // MODIFIES: this, main
+    // MODIFIES: this
     // EFFECTS : adds Back button with action listener and bound to new panel
     private void backButton() {
         JButton backButton = new JButton("Back");
@@ -62,6 +63,8 @@ public class ContentByYear extends JFrame implements ActionListener {
         panel.add(backButton);
     }
 
+    // MODIFIES: this
+    // EFFECTS: renders the scroll pane
     @Override
     public void actionPerformed(ActionEvent e) {
         if (jsp != null) {

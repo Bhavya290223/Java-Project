@@ -58,6 +58,7 @@ public class Content implements Writable {
 
     public void setRating(int newRating) {
         ratings = newRating;
+        EventLog.getInstance().logEvent(new Event("New ratings are: " + newRating));
     }
 
     @Override

@@ -7,6 +7,7 @@ import javax.swing.*;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
+// JFrame that gives a list in a scroll pane
 public class AccessList extends JFrame implements ListSelectionListener {
     private JPanel accessPanel;
     private ListOfContent loc;
@@ -18,6 +19,7 @@ public class AccessList extends JFrame implements ListSelectionListener {
     private JLabel langLabel;
     private JList list;
 
+    //EFFECTS: constructs a new frame to print list of Contents in a scroll pane
     public AccessList(ListOfContent loc) {
         this.loc = loc;
         setSize(800, 800);
@@ -49,6 +51,8 @@ public class AccessList extends JFrame implements ListSelectionListener {
         setVisible(true);
     }
 
+    //MODIFIES: this
+    //EFFECTS: generates the "back" button with bounds and action
     private void backButton() {
         JButton back = new JButton("Back");
         back.setBounds(20, 150, 80,20);
@@ -58,6 +62,8 @@ public class AccessList extends JFrame implements ListSelectionListener {
         accessPanel.add(back);
     }
 
+    //MODIFIES: this
+    //EFFECTS: adds labels to the panel which show the name, ratings, language, location, year and genre
     private void addLabels() {
         nameLabel = new JLabel();
         nameLabel.setBounds(20, 180, 150, 20);
@@ -86,6 +92,8 @@ public class AccessList extends JFrame implements ListSelectionListener {
 
     }
 
+    //MODIFIES: this
+    //EFFECTS: displays the fields of the selected Content
     @Override
     public void valueChanged(ListSelectionEvent e) {
         String name = (String) list.getSelectedValue();

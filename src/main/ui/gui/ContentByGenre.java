@@ -7,6 +7,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.List;
 
+// JFrame that filters list of Contents according to genre
 public class ContentByGenre extends JFrame implements ActionListener {
     private String g1;
     private JTextField genreText;
@@ -18,7 +19,7 @@ public class ContentByGenre extends JFrame implements ActionListener {
     private JButton ok;
     private JScrollPane jsp;
 
-
+    // EFFECTS: Constructs a panel for displaying filter Content by genre
     public ContentByGenre(ListOfContent loc) {
         this.loc = loc;
         setSize(800, 800);
@@ -50,7 +51,7 @@ public class ContentByGenre extends JFrame implements ActionListener {
         setVisible(true);
     }
 
-    // MODIFIES: this, main
+    // MODIFIES: this
     // EFFECTS : adds Back button with action listener and bound to new panel
     private void backButton() {
         JButton backButton = new JButton("Back");
@@ -61,6 +62,8 @@ public class ContentByGenre extends JFrame implements ActionListener {
         panel.add(backButton);
     }
 
+    //MODIFIES: this
+    //EFFECTS: renders the scroll pane
     @Override
     public void actionPerformed(ActionEvent e) {
         if (jsp != null) {
