@@ -23,7 +23,7 @@ public class ContentByLocation extends JFrame implements ActionListener {
     //  //EFFECTS: constructs a panel for displaying "filter according to Location"
     public ContentByLocation(ListOfContent loc) {
         this.loc = loc;
-        setSize(800, 800);
+        setSize(800, 600);
         setLocationRelativeTo(null);
 
         panel = new JPanel();

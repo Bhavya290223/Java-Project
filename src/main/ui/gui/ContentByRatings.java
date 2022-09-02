@@ -22,7 +22,7 @@ public class ContentByRatings extends JFrame implements ActionListener {
     //EFFECTS: constructs a panel for displaying "filter according to rating" functionality
     public ContentByRatings(ListOfContent loc) {
         this.loc = loc;
-        setSize(800, 800);
+        setSize(800, 600);
         setLocationRelativeTo(null);
 
         panel = new JPanel();

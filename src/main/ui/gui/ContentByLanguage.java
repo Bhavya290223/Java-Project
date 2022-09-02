@@ -22,7 +22,7 @@ public class ContentByLanguage extends JFrame implements ActionListener {
     // JFrame that filters list of Contents according to Language
     public ContentByLanguage(ListOfContent loc) {
         this.loc = loc;
-        setSize(800, 800);
+        setSize(800, 600);
         setLocationRelativeTo(null);
 
         panel = new JPanel();

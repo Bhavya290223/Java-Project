@@ -22,7 +22,7 @@ public class AccessList extends JFrame implements ListSelectionListener {
     //EFFECTS: constructs a new frame to print list of Contents in a scroll pane
     public AccessList(ListOfContent loc) {
         this.loc = loc;
-        setSize(800, 800);
+        setSize(800, 600);
         setLocationRelativeTo(null);
         accessPanel = new JPanel();
 

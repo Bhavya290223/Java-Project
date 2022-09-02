@@ -23,7 +23,7 @@ public class ContentByYear extends JFrame implements ActionListener {
     // EFFECTS: constructs panel for displaying filter by year
     public ContentByYear(ListOfContent loc) {
         this.loc = loc;
-        setSize(800, 800);
+        setSize(800, 600);
         setLocationRelativeTo(null);
 
         panel = new JPanel();

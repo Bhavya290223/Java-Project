@@ -1,10 +1,12 @@
 package ui.gui;
 
+import model.Content;
 import model.ListOfContent;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.time.Year;
 import java.util.List;
 
 // JFrame that filters list of Contents according to genre
@@ -22,7 +24,7 @@ public class ContentByGenre extends JFrame implements ActionListener {
     // EFFECTS: Constructs a panel for displaying filter Content by genre
     public ContentByGenre(ListOfContent loc) {
         this.loc = loc;
-        setSize(800, 800);
+        setSize(800, 600);
         setLocationRelativeTo(null);
 
         panel = new JPanel();
@@ -78,23 +80,34 @@ public class ContentByGenre extends JFrame implements ActionListener {
     // MODIFIES: this, jsp
     // EFFECTS : displays list by genre in a new scroll pane with bounds and adds it to panel
     private void displayList() {
-        answerLabel.setText("Here is the list of Contents of this genre: ");
-
+        String strPattern = "^[\\pL]*$";
         g1 = genreText.getText();
 
-        List<String> finalList = loc.contentbyGenre(g1);
-        int size = finalList.size();
+        if (!(g1.matches(strPattern))) {
+            JOptionPane.showMessageDialog(panel, "Please enter valid inputs!");
+            answerLabel.setText("There are no list(s) for this input!");
+            list = new JList();
+            jsp = new JScrollPane(list);
+            jsp.setBounds(100,280,300,80);
+            panel.add(jsp,list);
 
-        String[] names = new String[size];
+        } else {
+            answerLabel.setText("Here is the list of Contents of this genre: ");
 
-        for (int i = 0;i < size;i++) {
-            names[i] = finalList.get(i);
+            List<String> finalList = loc.contentbyGenre(g1);
+            int size = finalList.size();
+
+            String[] names = new String[size];
+
+            for (int i = 0; i < size; i++) {
+                names[i] = finalList.get(i);
+            }
+
+            list = new JList(names);
+
+            jsp = new JScrollPane(list);
+            jsp.setBounds(100,280,300,80);
+            panel.add(jsp,list);
         }
-
-        list = new JList(names);
-
-        jsp = new JScrollPane(list);
-        jsp.setBounds(100,280,300,80);
-        panel.add(jsp,list);
     }
 }

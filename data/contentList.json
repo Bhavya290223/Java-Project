@@ -1,10 +1,10 @@
 {
     "loc": [{
         "site": "net",
-        "year": 5555,
+        "year": 2021,
         "ratings": 5,
         "name": "abc",
-        "genre": "cm",
+        "genre": "kn",
         "language": "kn"
     }],
     "name": "MyList"

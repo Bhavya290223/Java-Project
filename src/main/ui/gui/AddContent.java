@@ -6,6 +6,7 @@ import model.ListOfContent;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.time.Year;
 
 // JFrame that adds Content to the list
 public class AddContent extends JFrame implements ActionListener {
@@ -42,7 +43,7 @@ public class AddContent extends JFrame implements ActionListener {
     //EFFECTS: constructs a panel for displaying "add Content to list" functionality
     public AddContent(ListOfContent loc) {
         this.loc = loc;
-        setSize(600, 600);
+        setSize(800, 600);
         setLocationRelativeTo(null);
         panel = new JPanel();
 
@@ -72,12 +73,12 @@ public class AddContent extends JFrame implements ActionListener {
     // EFFECTS : adds Ok and Back buttons with action listeners and bounds to new panel
     private void getButtons() {
         JButton store = new JButton("OK");
-        store.setBounds(100,200,200,20);
+        store.setBounds(100, 200, 200, 20);
         store.addActionListener(this);
         panel.add(store);
 
         JButton backButton = new JButton("Back");
-        backButton.setBounds(320,200,200,20);
+        backButton.setBounds(320, 200, 200, 20);
         backButton.addActionListener(e -> {
             dispose();
         });
@@ -166,10 +167,17 @@ public class AddContent extends JFrame implements ActionListener {
         year = Integer.parseInt(yearText.getText());
         lang = langText.getText();
         location = locationText.getText();
+        String strPattern = "^[\\pL]*$";
 
-        Content c = new Content(name, year, genre, lang, ratings, location);
-        loc.addToList(c);
-
-        JOptionPane.showMessageDialog(panel,"Content added successfully!");
+        if (!(name.matches(strPattern) && genre.matches(strPattern) && lang.matches(strPattern)
+                && location.matches(strPattern))) {
+            JOptionPane.showMessageDialog(panel, "Please enter valid inputs!");
+        } else if (!(0 <= ratings && ratings <= 5 && 1900 <= year && year <= Year.now().getValue())) {
+            JOptionPane.showMessageDialog(panel, "Please enter valid numbers!");
+        } else {
+            Content c = new Content(name, year, genre, lang, ratings, location);
+            loc.addToList(c);
+            JOptionPane.showMessageDialog(panel, "Content added successfully!");
+        }
     }
 }

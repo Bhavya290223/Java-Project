@@ -1,6 +1,8 @@
 package persistence;
 
 import model.Content;
+import model.Event;
+import model.EventLog;
 import model.ListOfContent;
 
 import java.io.IOException;
@@ -47,6 +49,7 @@ public class JsonReader {
         String name = jsonObject.getString("name");
         ListOfContent loc = new ListOfContent(name);
         addContents(loc, jsonObject);
+        EventLog.getInstance().logEvent(new Event("Loaded " + name));
         return loc;
     }
 

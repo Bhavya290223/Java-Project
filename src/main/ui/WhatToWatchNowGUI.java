@@ -11,6 +11,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.text.ParseException;
 import java.util.Objects;
 
 public class WhatToWatchNowGUI extends JFrame {

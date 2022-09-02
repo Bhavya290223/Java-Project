@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/src/main" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/test" isTestSource="true" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="lib15" level="project" />
+    <orderEntry type="library" name="lib31" level="project" />
+    <orderEntry type="library" name="lib7" level="project" />
+    <orderEntry type="library" name="lib14" level="project" />
+    <orderEntry type="library" name="lib9" level="project" />
+    <orderEntry type="library" name="lib20" level="project" />
+    <orderEntry type="library" name="lib6" level="project" />
+    <orderEntry type="library" name="lib16" level="project" />
+    <orderEntry type="library" name="lib28" level="project" />
+    <orderEntry type="library" name="lib10" level="project" />
+    <orderEntry type="library" name="lib48" level="project" />
+    <orderEntry type="library" name="lib12" level="project" />
+    <orderEntry type="library" name="lib17" level="project" />
+    <orderEntry type="library" name="lib21" level="project" />
+    <orderEntry type="library" name="lib23" level="project" />
+    <orderEntry type="library" name="lib35" level="project" />
+    <orderEntry type="library" name="lib45" level="project" />
+    <orderEntry type="library" name="lib" level="project" />
+    <orderEntry type="library" name="lib13" level="project" />
+    <orderEntry type="library" name="lib40" level="project" />
+    <orderEntry type="library" name="lib32" level="project" />
+    <orderEntry type="library" name="lib24" level="project" />
+    <orderEntry type="library" name="lib29" level="project" />
+    <orderEntry type="library" name="lib27" level="project" />
+    <orderEntry type="library" name="lib34" level="project" />
+    <orderEntry type="library" name="lib36" level="project" />
+    <orderEntry type="library" name="lib8" level="project" />
+    <orderEntry type="library" name="lib41" level="project" />
+    <orderEntry type="library" name="lib3" level="project" />
+    <orderEntry type="library" name="lib11" level="project" />
+    <orderEntry type="library" name="lib30" level="project" />
+    <orderEntry type="library" name="lib19" level="project" />
+    <orderEntry type="library" name="lib33" level="project" />
+    <orderEntry type="library" name="lib22" level="project" />
+    <orderEntry type="library" name="lib37" level="project" />
+    <orderEntry type="library" name="lib44" level="project" />
+    <orderEntry type="library" name="lib5" level="project" />
+    <orderEntry type="library" name="lib42" level="project" />
+    <orderEntry type="library" name="lib43" level="project" />
+    <orderEntry type="library" name="lib39" level="project" />
+    <orderEntry type="library" name="lib47" level="project" />
+    <orderEntry type="library" name="lib1" level="project" />
+    <orderEntry type="library" name="lib4" level="project" />
+    <orderEntry type="library" name="lib38" level="project" />
+    <orderEntry type="library" name="lib26" level="project" />
+    <orderEntry type="library" name="lib18" level="project" />
+    <orderEntry type="library" name="lib46" level="project" />
+    <orderEntry type="library" name="lib25" level="project" />
+    <orderEntry type="library" name="lib2" level="project" />
+    <orderEntry type="module" module-name="Lec6" />
+    <orderEntry type="module" module-name="PetPairsStarter" />
+    <orderEntry type="module" module-name="MonsterMazeStarter1" />
+    <orderEntry type="module" module-name="Observer-SimpleDrawingPlayerStarter" />
+    <orderEntry type="module" module-name="PetPairsStarter1" />
+    <orderEntry type="module" module-name="IntegerSetTestStarter" />
+    <orderEntry type="module" module-name="C3" />
+    <orderEntry type="module" module-name="BingoStarter1" />
+    <orderEntry type="module" module-name="Lec7" />
+    <orderEntry type="module" module-name="Observer-SimpleDrawingPlayerSolution1" />
+    <orderEntry type="module" module-name="FitLifeGymChainOOD1" />
+    <orderEntry type="module" module-name="Busy'sDiner3" />
+    <orderEntry type="module" module-name="Review Solutions" />
+    <orderEntry type="module" module-name="Busy'sDiner21" />
+    <orderEntry type="module" module-name="BusFareCard" />
+    <orderEntry type="module" module-name="TransactionSummary" />
+    <orderEntry type="module" module-name="FoodTruck" />
+    <orderEntry type="module" module-name="IntegerSet" />
+    <orderEntry type="module" module-name="FitLifeGymChainOOD" />
+    <orderEntry type="module" module-name="Iterator-ToyStoreAdvancedStarter1" />
+    <orderEntry type="module" module-name="FoodTruck1" />
+    <orderEntry type="module" module-name="IntegerSet2" />
+    <orderEntry type="module" module-name="IntegerSetTestStarter2" />
+    <orderEntry type="module" module-name="FerryServiceDebugging1" />
+    <orderEntry type="module" module-name="Review4567" />
+    <orderEntry type="module" module-name="BusFareCard1" />
+    <orderEntry type="module" module-name="Observer-CourseInstructorStudentsSolution1" />
+    <orderEntry type="module" module-name="BusFareCard2" />
+    <orderEntry type="module" module-name="Observer-CourseInstructorStudentsStarter1" />
+    <orderEntry type="module" module-name="A6LL" />
+    <orderEntry type="module" module-name="Observer-CourseInstructorStudentsSolution" />
+    <orderEntry type="module" module-name="lec 21" />
+    <orderEntry type="module" module-name="HairSalon4Starter1" />
+    <orderEntry type="module" module-name="Observer-SimpleDrawingPlayerSolution" />
+    <orderEntry type="module" module-name="GradeIt" />
+    <orderEntry type="module" module-name="Lec18" />
+    <orderEntry type="module" module-name="Busy'sDiner11" />
+    <orderEntry type="module" module-name="Iterator-SimpleIteratorSolution1" />
+    <orderEntry type="module" module-name="Contact" />
+    <orderEntry type="module" module-name="CoffeeMaker2" />
+    <orderEntry type="module" module-name="FitLifeGym" />
+    <orderEntry type="module" module-name="MovieTheatre1" />
+    <orderEntry type="module" module-name="31" />
+    <orderEntry type="module" module-name="SillyWordGameStarter" />
+    <orderEntry type="module" module-name="HairSalon4Solution2" />
+    <orderEntry type="module" module-name="Busy'sDiner2" />
+    <orderEntry type="module" module-name="C678" />
+    <orderEntry type="module" module-name="Band" />
+    <orderEntry type="module" module-name="QuizG" />
+    <orderEntry type="module" module-name="C8" />
+    <orderEntry type="module" module-name="FoodTruck2" />
+    <orderEntry type="module" module-name="Lec18b" />
+    <orderEntry type="module" module-name="MonsterMazeStarter" />
+    <orderEntry type="module" module-name="RefactoredSimpleDrawingPlayerStarter" />
+    <orderEntry type="module" module-name="Iterator-ToyStoreAdvancedSolution1" />
+    <orderEntry type="module" module-name="StudentRecord" />
+    <orderEntry type="module" module-name="Busy'sDiner1" />
+    <orderEntry type="module" module-name="HairSalon4Starter2" />
+    <orderEntry type="module" module-name="Iterator-ToyStoreAdvancedSolution" />
+    <orderEntry type="module" module-name="FerryServiceMaster1" />
+    <orderEntry type="module" module-name="MovieTheatre2" />
+    <orderEntry type="module" module-name="Composite-TopicsAndLecturesStarter" />
+    <orderEntry type="module" module-name="RefactoredHairSalonSolution" />
+    <orderEntry type="module" module-name="MovieTheatre" />
+    <orderEntry type="module" module-name="IntegerSetStarter" />
+    <orderEntry type="module" module-name="Busy'sDiner31" />
+    <orderEntry type="module" module-name="Lab 7" />
+    <orderEntry type="module" module-name="RefactoredHairSalonStarter" />
+    <orderEntry type="module" module-name="Iterator-SimpleIteratorStarter" />
+    <orderEntry type="module" module-name="FerryServiceDebugging" />
+    <orderEntry type="module" module-name="Iterator-ToyStoreAdvancedStarter" />
+    <orderEntry type="module" module-name="IntegerSetTestStarter1" />
+    <orderEntry type="module" module-name="Observer-CourseInstructorStudentsStarter" />
+    <orderEntry type="module" module-name="IntegerSet1" />
+    <orderEntry type="module" module-name="NotebookAppObserverStarter" />
+    <orderEntry type="module" module-name="Composite-TopicsAndLecturesStarter1" />
+    <orderEntry type="module" module-name="ToyStoreAdvancedIteratorStarter" />
+    <orderEntry type="module" module-name="D3p" />
+    <orderEntry type="module" module-name="iPod" />
+    <orderEntry type="module" module-name="HairSalon4Solution1" />
+    <orderEntry type="module" module-name="FerryServiceMaster" />
+    <orderEntry type="module" module-name="SillyWordGameStarter1" />
+    <orderEntry type="module" module-name="RefactoredSimpleDrawingPlayerSolution" />
+    <orderEntry type="module" module-name="CoffeeMaker3" />
+    <orderEntry type="module" module-name="HairSalon4Starter" />
+    <orderEntry type="module" module-name="FriendNet" />
+    <orderEntry type="module" module-name="ExceptionalZooSolution" />
+    <orderEntry type="module" module-name="Composite-TopicsAndLecturesSolution1" />
+    <orderEntry type="module" module-name="RestaurantOrders" />
+    <orderEntry type="module" module-name="Composite-TopicsAndLecturesSolution" />
+    <orderEntry type="module" module-name="Lec 11" />
+    <orderEntry type="module" module-name="FerryServiceMaster2" />
+    <orderEntry type="module" module-name="Iterator-SimpleIteratorSolution" />
+    <orderEntry type="module" module-name="Json" />
+    <orderEntry type="module" module-name="StudentRecord2" />
+    <orderEntry type="module" module-name="Lec6a" />
+    <orderEntry type="module" module-name="NotebookAppCompositeStarter" />
+    <orderEntry type="module" module-name="D1" />
+    <orderEntry type="module" module-name="TaskManager" />
+    <orderEntry type="module" module-name="Lec14" />
+    <orderEntry type="module" module-name="FerryServiceDebugging2" />
+    <orderEntry type="module" module-name="ExceptionalZooStarter" />
+    <orderEntry type="module" module-name="Observer-SimpleDrawingPlayerStarter1" />
+    <orderEntry type="module" module-name="StudentRecord1" />
+    <orderEntry type="module" module-name="IntegerSetStarter2" />
+    <orderEntry type="module" module-name="HairSalon4Solution" />
+    <orderEntry type="module" module-name="IntegerSetStarter1" />
+    <orderEntry type="module" module-name="Lec9" />
+    <orderEntry type="module" module-name="BingoStarter" />
+    <orderEntry type="module" module-name="Iterator-SimpleIteratorStarter1" />
+  </component>
+</module>
