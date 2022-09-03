@@ -12,7 +12,7 @@ This project interests me because with the onset of new generation and technolog
 things to watch has emerged. Many people including me often faces a dilemma to find the best watch 
 but instead end up droomscrolling. So, to save some time off from endless searching and give people a sense of relief from negative news and pandemic, I believe such projects should be made
 
-## User Stories
+## Features
 
 As a user, I want to be able to:
 
@@ -29,7 +29,7 @@ As a user, I want to be able to:
 - save the list I created. 
 - load the list I have saved.
 
-## Phase 4: Task 2
+## Sample
 
 A sample of the event log generated is:
 
@@ -37,7 +37,7 @@ A sample of the event log generated is:
 - Tue Nov 23 21:52:44 PST 2021 Saved MyList
 - Tue Nov 23 21:53:07 PST 2021 Loaded MyList
 
-## Phase 4: Task 3
+## Improvements to be made:
 
 I would have done the following additions:
 
